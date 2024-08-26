@@ -9,16 +9,14 @@ export default function loginPage() {
   const router = useRouter();
   const { status } = useSession();
 
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
   if (status === "authenticated") {
-    router.push("/");
+    router.push("/dashboard");
   }
   return (
     <>
       <ContentWrapper tag="main">
-        <LoginForm />
+        {status === "loading" && <div>Loading...</div>}
+        {status === "unauthenticated" && <LoginForm />}
       </ContentWrapper>
     </>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 import ContentWrapper from "./ContentWrapper";
 import { oswald } from "./fonts";
 import { ModeToggle } from "./ui/darkmode";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { useState } from "react";
 import { X, User, LogIn, LogOut, AlignJustify } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -20,7 +20,6 @@ import {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { data, status } = useSession();
-  console.log(data);
   return (
     <>
       <ContentWrapper

@@ -1,4 +1,5 @@
 import AuthProvider from "@/components/AuthProvider";
+import DashboardContent from "@/components/dashboard/DashboardContent";
 
 export const metadata = {
   title: "Dashboard",
@@ -7,10 +8,8 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
-    </html>
+    <AuthProvider>
+      <DashboardContent title={metadata.title}>{children}</DashboardContent>
+    </AuthProvider>
   );
 }
